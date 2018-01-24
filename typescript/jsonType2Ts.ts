@@ -37,7 +37,7 @@ export default function resolveJsonType(schemaProp, typeName?: string): TsTypeIn
     itemType.label += '[]';
     return itemType;
   } else if (schemaProp.type == 'object') {   // FIXME donot use external name?
-    return { label: typeName, category: 'object' };
+    return { label: schemaProp.properties ? typeName : 'any', category: 'object' };
   } else if (schemaProp.format == 'binary') {
     return { label: 'ArrayBuffer', category: 'binary' };
   } else {

@@ -35,7 +35,7 @@ export default class Definition {
       if (typeInfo.refs) {
         this.addImports(typeInfo.refs);
       } else if (typeInfo.category == 'object') {
-        console.error('Type of a property should not be object ', propVal);
+        console.error('Type is object but without property definitions', propVal);
       }
     }
 
